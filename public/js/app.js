@@ -3,8 +3,10 @@ const search = document.querySelector('input')
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
 const message3 = document.querySelector('#message-3')
+const message4 = document.querySelector('#message-4')
 const message1Header = document.querySelector('#message-1-header')
 const message2Header = document.querySelector('#message-2-header')
+const message4Header = document.querySelector('#message-4-header')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -24,11 +26,13 @@ weatherForm.addEventListener('submit', (e) => {
                 message1Header.textContent = data.error
             } else {
                 console.log(data)
-                message1Header.textContent = 'Current temp:'
+                message1Header.textContent = 'Current temp: '
                 message1.textContent = data.temperature
-                message2Header.textContent = 'Feels like:'
+                message2Header.textContent = 'Feels like: '
                 message2.textContent = data.feelsLike
                 message3.textContent = data.location
+                message4Header.textContent = 'Current weather: '
+                message4.textContent = data.weather[0]
             }
         })
     })

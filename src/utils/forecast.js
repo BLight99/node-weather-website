@@ -11,7 +11,9 @@ const forecast = (lat, long, callback) => {
             // return('It is currently ' + body.current.temperature + ' degrees out. It feels like ' + body.current.feelslike + ' degrees out.')
             callback(undefined, {
                 temperature: body.current.temperature,
-                feelsLike: body.current.feelslike
+                feelsLike: body.current.feelslike,
+                weather_icon: body.current.weather_icons,
+                weather: body.current.weather_descriptions
             })
         }
     })
